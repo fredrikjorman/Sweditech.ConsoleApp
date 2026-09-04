@@ -3,19 +3,28 @@
 public class CustomerDialogService : ICustomerDialog
 {
     private readonly ICustomerService _customerService;
+
     public CustomerDialogService(ICustomerService customerService)
     {
         _customerService = customerService;
     }
 
-   public void ShowCustomerDialog()
+    public void RegisterCustomer()
     {
-        Console.WriteLine("Ange kundens namn: ");
-        var name = Console.ReadLine();
-        Console.WriteLine("Ange kundens email: ");
-        var email = Console.ReadLine();
-        var customer = new Customer { Namn = name, Email = email };
+        Console.Write("Ange kundens namn: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Ange kundens e-postadress: ");
+        string email = Console.ReadLine();
+
+        Customer customer = new Customer
+        {
+            Namn = name,
+            Email = email
+        };
+
         _customerService.AddCustomer(customer);
-        Console.WriteLine($"Kund {name} har lagts till");
+
+        Console.WriteLine($"Kunden {customer.Namn} har lagts till.");
     }
 }
