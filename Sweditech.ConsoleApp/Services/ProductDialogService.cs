@@ -8,12 +8,15 @@ public class ProductDialogService(IProductService productService) : IProductDial
 {
     public void CreateProductDialog()
     {
-        Console.WriteLine("Ange produktnamn:");
+        Console.Clear();
+
+        Console.WriteLine("### LÄGG TILL PRODUKT ###");
+        Console.WriteLine("Ange produktnamn: ");
         string? productName = Console.ReadLine();
 
         while (string.IsNullOrWhiteSpace(productName))
         {
-            Console.WriteLine("Produktnamn kan inte vara tomt. Ange produktnamn:");
+            Console.WriteLine("Produktnamn kan inte vara tomt.");
             Console.WriteLine("Ange produktnamn:");
             productName = Console.ReadLine();
         }
@@ -32,7 +35,7 @@ public class ProductDialogService(IProductService productService) : IProductDial
 
             Product product = new Product(productName, price);
             productService.AddProduct(product);
-            Console.WriteLine("Produkten har sparats!");
+            Console.WriteLine($"Produkten {product.ProductName} med priset {product.Price} har sparats!");
             Console.ReadKey();
 
 
