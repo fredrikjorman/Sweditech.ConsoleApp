@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Sweditech.ConsoleApp.Customer;
 
-namespace Sweditech.ConsoleApp.Customer
+public interface ICustomerService
 {
-    internal interface ICustomerService
-    {
-    }
+    void AddCustomer(Customer customer);
+    List<Customer> GetAllCustomers();
 }
