@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Sweditech.ConsoleApp.Customer;
 
-namespace Sweditech.ConsoleApp.Customer
+public class CustomerDialogService
 {
-    internal class CustomerDialogService
-    {
-    }
 }

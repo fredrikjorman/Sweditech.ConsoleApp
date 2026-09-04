@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Sweditech.ConsoleApp.Customer;
 
-namespace Sweditech.ConsoleApp.Customer
+public class CustomerService : ICustomerService
 {
-    internal class CustomerService
+    private readonly List<Customer> _customers = new List<Customer>();
+
+    public void AddCustomer(Customer customer)
     {
+        _customers.Add(customer);
+    }
+
+    public List<Customer> GetAllCustomers()
+    {
+        return _customers;
     }
 }
