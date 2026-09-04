@@ -7,10 +7,12 @@ internal class ProductService : IProductService
 {
 
     private readonly List<Product> _products = [];
+
     public void AddProduct(Product product)
     {
 
         _products.Add(product);
+
     }
 }
 
